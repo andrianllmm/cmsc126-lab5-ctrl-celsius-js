@@ -455,4 +455,18 @@
   main section {
     margin-bottom: var(--space-xl);
   }
+
+  /* Time */
+  #time {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-sm);
+
+    #current-date-output {
+      text-align: center;
+      font-size: var(--text-lg);
+      font-weight: var(--font-bold);
+    }
+  }
 }
