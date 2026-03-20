@@ -1,3 +1,8 @@
+/**
+ * Entry point
+ * Initializes app by attaching event listeners to DOM elements
+ */
+
 import { time_now } from "./time.js";
 
 // DOM Elements

@@ -469,4 +469,16 @@
       font-weight: var(--font-bold);
     }
   }
+
+  /* Add student */
+  #add-student {
+  }
+
+  /* Search student */
+  #search-student {
+  }
+
+  /* All students */
+  #all-students {
+  }
 }

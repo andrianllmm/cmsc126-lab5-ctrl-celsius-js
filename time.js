@@ -1,3 +1,7 @@
+/**
+ * Feature module for displaying the current time.
+ */
+
 export function time_now() {
   const now = new Date();
 
