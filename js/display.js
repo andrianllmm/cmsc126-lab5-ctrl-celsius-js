@@ -16,17 +16,19 @@ export function display_list() {
   tbody.innerHTML = "";
 
   // Populate rows
-  students.forEach((student) => {
-    const row = document.createElement("tr");
-    row.innerHTML = `
-      <td>${student.studentNumber}</td>
-      <td>${student.name}</td>
-      <td>${student.age}</td>
-      <td>${student.email}</td>
-      <td>${student.course}</td>
-    `;
-    tbody.appendChild(row);
-  });
+  [...students]
+    .sort((a, b) => a.studentNumber.localeCompare(b.studentNumber))
+    .forEach((student) => {
+      const row = document.createElement("tr");
+      row.innerHTML = `
+        <td>${student.studentNumber}</td>
+        <td>${student.name}</td>
+        <td>${student.age}</td>
+        <td>${student.email}</td>
+        <td>${student.course}</td>
+      `;
+      tbody.appendChild(row);
+    });
 
   // Update and show count badge
   count.textContent = students.length;

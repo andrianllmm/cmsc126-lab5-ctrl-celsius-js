@@ -542,24 +542,44 @@
   }
 
   /* Student result card */
-  .student-card {
-    display: flex;
-    flex-direction: column;
-    gap: var(--space-xs);
+.student-card {
+  border: 1px solid hsl(var(--border));
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  font-size: var(--text-sm);
+  animation: fadeSlideUp 0.2s ease;
+}
 
-    padding: var(--space-lg);
-    border: 1px solid hsl(var(--border));
-    border-radius: var(--radius-lg);
+.student-card-header {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xxs);
+  padding: var(--space-md) var(--space-lg);
+  background: hsl(var(--muted));
+}
 
-    font-size: var(--text-sm);
-    color: hsl(var(--foreground));
+.student-card-name {
+  font-size: var(--text-lg);
+  font-weight: var(--font-bold);
+  color: hsl(var(--primary));
+}
 
-    animation: fadeSlideUp 0.2s ease;
-  }
+.student-card-id {
+  font-size: var(--text-sm);
+  color: hsl(var(--muted-foreground));
+}
 
-  .student-card__label {
-    font-weight: var(--font-semibold);
-  }
+.student-card-body {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+  padding: var(--space-md) var(--space-lg);
+  background: hsl(var(--background));
+}
+
+.student-card-label {
+  font-weight: var(--font-semibold);
+}
 
   /* All students */
   #all-students {

@@ -27,13 +27,17 @@ export function find_student() {
     return;
   }
 
-  resultContainer.innerHTML = `
+resultContainer.innerHTML = `
     <div class="student-card">
-      <p><span class="student-card-label">ID:</span> ${student.studentNumber}</p>
-      <p><span class="student-card-label">Name:</span> ${student.name}</p>
-      <p><span class="student-card-label">Age:</span> ${student.age}</p>
-      <p><span class="student-card-label">Email:</span> ${student.email}</p>
-      <p><span class="student-card-label">Course:</span> ${student.course}</p>
+      <div class="student-card-header">
+        <h3 class="student-card-name">${student.name}</h3>
+        <span class="student-card-id">${student.studentNumber}</span>
+      </div>
+      <div class="student-card-body">
+        <p><span class="student-card-label">Age:</span> ${student.age}</p>
+        <p><span class="student-card-label">Email:</span> ${student.email}</p>
+        <p><span class="student-card-label">Course:</span> ${student.course}</p>
+      </div>
     </div>
   `;
 }
