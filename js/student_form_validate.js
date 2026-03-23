@@ -1,5 +1,8 @@
 // Store used student numbers to check for duplicates
 import {Student} from "./student.js"
+import { add_student } from "./add_student.js";
+
+
 var usedStudentNumbers = [];
 
 export function generateStudentNumber() {
@@ -10,7 +13,7 @@ export function generateStudentNumber() {
   } while (usedStudentNumbers.indexOf(studentNumber) !== -1); //while no unique student number is generated
 
   usedStudentNumbers.push(studentNumber);
-  return studentNumber;
+  return studentNumber; 
 }
 
 
@@ -31,11 +34,16 @@ export function initStudentForm() {
       const email = document.getElementById("email").value.trim();
       const course = document.querySelector('input[name="course"]:checked').value;
 
-      // Create the Student object
-      const student = new Student(studentNumber, name, age, email, course);
-
-      // Confirm in console
-      console.log("Student object created:", student);
+      // Create the Student object and add it to student array
+      add_student(studentNumber, name, age, email, course);
+     
+      
+      // Reset form and generate new student number for next entry
+      form.reset();
+      const newStudentNumber = generateStudentNumber();
+      document.getElementById("studentNumber").textContent = newStudentNumber;
+    
+      
     }
   });
 }
