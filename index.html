@@ -33,6 +33,43 @@
         <!-- Add student -->
         <section id="add-student">
           <h2>Add Student</h2>
+          <p><strong>Student Number:</strong> <span id="studentNumber"></span></p>
+ 
+          <form action="" method="post" onsubmit="return validateForm()">
+        
+            <label for="name">Name:</label><br>
+            <input type="text" id="name" name="name"><br>
+            <small id="nameError" style="color:red;"></small><br>
+        
+            <label for="age">Age:</label><br>
+            <input type="text" id="age" name="age"><br>
+            <small id="ageError" style="color:red;"></small><br>
+        
+            <label for="email">Email:</label><br>
+            <input type="text" id="email" name="email"><br>
+            <small id="emailError" style="color:red;"></small><br>
+        
+            <label>Course:</label><br>
+            <input type="radio" id="course1" name="course" value="BA Food Appreciation">
+            <label for="course1">BA Food Appreciation</label><br>
+        
+            <input type="radio" id="course2" name="course" value="BA Applied Poetry of the Future">
+            <label for="course2">BA Applied Poetry of the Future</label><br>
+        
+            <input type="radio" id="course3" name="course" value="BS Computer Repair Shop">
+            <label for="course3">BS Computer Repair Shop</label><br>
+        
+            <input type="radio" id="course4" name="course" value="BS Video Gaming">
+            <label for="course4">BS Video Gaming</label><br>
+        
+            <input type="radio" id="course5" name="course" value="BS Installing and Downloading">
+            <label for="course5">BS Installing and Downloading</label><br>
+            <small id="courseError" style="color:red;"></small><br>
+        
+            <input type="submit" value="Submit">
+        
+          </form>
+ 
         </section>
 
         <!-- Search student -->
@@ -54,5 +91,6 @@
 
     <!-- Scripts -->
     <script type="module" src="js/main.js"></script>
+    
   </body>
 </html>
