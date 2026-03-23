@@ -28,8 +28,9 @@ export function display_list() {
     tbody.appendChild(row);
   });
 
-  // Update count badge
+  // Update and show count badge
   count.textContent = students.length;
+  count.style.display = "inline-flex";
 
   // Show the table
   table.style.display = "table";
