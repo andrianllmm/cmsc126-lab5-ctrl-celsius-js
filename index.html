@@ -36,9 +36,6 @@
         </section>
 
         <!-- Search student -->
-        <!-- <section id="search-student">
-          <h2>Search Student</h2>
-        </section> -->
         <section id="search-student">
           <h2>Search Student</h2>
           <div class="search-bar">
@@ -55,8 +52,30 @@
 
         <!-- All students -->
         <section id="all-students">
-          <h2>All Students</h2>
+          <div class="all-students__header">
+            <div class="all-students__title">
+              <h2>All Students</h2>
+            </div>
+            <span class="all-students__count" id="student-count">0</span>
+          </div>
+
+          <button class="all-students__btn" id="display-all-btn">Display All</button>
+
+          <table class="all-students__table" id="students-table">
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Age</th>
+                <th>Email</th>
+                <th>Course</th>
+              </tr>
+            </thead>
+            <tbody id="students-tbody"></tbody>
+          </table>
         </section>
+
+
       </div>
     </main>
 
