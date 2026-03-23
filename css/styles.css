@@ -584,4 +584,12 @@
     font-size: var(--text-xs);
     font-weight: var(--font-semibold);
   }
+
+  /* Full-width Display All button */
+  .all-students_btn {
+    width: 100%;
+    padding: var(--space-md) var(--space-base);
+    gap: var(--space-sm);
+    font-size: var(--text-base);
+  }
 }
