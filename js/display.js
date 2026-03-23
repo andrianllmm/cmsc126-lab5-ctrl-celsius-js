@@ -17,6 +17,7 @@ export function display_list() {
 
   // Populate rows
   [...students]
+    // Sort students by ID in ascending order
     .sort((a, b) => a.studentNumber.localeCompare(b.studentNumber))
     .forEach((student) => {
       const row = document.createElement("tr");
