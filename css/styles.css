@@ -541,9 +541,27 @@
     -webkit-mask-size: contain;
   }
 
+  /* Student result card */
+  .student-card {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-xs);
+
+    padding: var(--space-lg);
+    border: 1px solid hsl(var(--border));
+    border-radius: var(--radius-lg);
+
+    font-size: var(--text-sm);
+    color: hsl(var(--foreground));
+
+    animation: fadeSlideUp 0.2s ease;
+  }
+
+  .student-card__label {
+    font-weight: var(--font-semibold);
+  }
 
   /* All students */
-/* All students */
   #all-students {
     display: flex;
     flex-direction: column;
@@ -556,20 +574,20 @@
     box-shadow: 0 2px 12px hsl(0 0% 0% / 0.08);
   }
   /* Header row: icon + heading on the left, badge on the right */
-  .all-students_header {
+  .all-students-header {
     display: flex;
     align-items: center;
     justify-content: space-between;
   }
 
-  .all-students_title {
+  .all-students-title {
     display: flex;
     align-items: center;
     gap: var(--space-sm);
   }
 
   /* Count badge */
-  .all-students_count {
+  .all-students-count {
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -586,7 +604,7 @@
   }
 
   /* Full-width Display All button */
-  .all-students_btn {
+  .all-students-btn {
     width: 100%;
     padding: var(--space-md) var(--space-base);
     gap: var(--space-sm);
@@ -594,14 +612,14 @@
   }
 
   /* Table */
-  .all-students_table {
+  .all-students-table {
     width: 100%;
     border-collapse: collapse;
     font-size: var(--text-sm);
     display: none;
   }
 
-  .all-students_table th {
+  .all-students-table th {
     text-align: left;
     padding: var(--space-sm) var(--space-base);
     color: hsl(var(--muted-foreground));
@@ -609,13 +627,13 @@
     border-bottom: 1px solid hsl(var(--border));
   }
 
-  .all-students_table td {
+  .all-students-table td {
     padding: var(--space-md) var(--space-base);
     color: hsl(var(--foreground));
     border-bottom: 1px solid hsl(var(--border));
   }
 
-  .all-students_table tr:last-child td {
+  .all-students-table tr:last-child td {
     border-bottom: none;
   }
 
