@@ -598,6 +598,7 @@
     width: 100%;
     border-collapse: collapse;
     font-size: var(--text-sm);
+    display: none;
   }
 
   .all-students_table th {
