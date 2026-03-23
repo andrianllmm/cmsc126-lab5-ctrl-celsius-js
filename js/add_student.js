@@ -1,12 +1,13 @@
-
-
-import { Student } from "./student.js";
-
-// Empty array to store Student objects
-export const students = [];
+import { students } from "./student.js";
 
 export function add_student(studentNumber, name, age, email, course) {
-  const student = new Student(studentNumber, name, age, email, course);
+  const student = {
+    studentNumber: studentNumber,
+    name: name,
+    age: age,
+    email: email,
+    course: course,
+  };
   students.push(student);
   //confirm in console
   console.log("Student added:", student);
