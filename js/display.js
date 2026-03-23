@@ -33,7 +33,7 @@ export function display_list() {
 
   // Update and show count badge
   count.textContent = students.length;
-  count.style.display = "inline-flex";
+  count.style.visibility = "visible";
 
   // Show the table
   table.style.display = "table";

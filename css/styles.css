@@ -602,9 +602,10 @@
 
   /* Count badge */
   .all-students-count {
-    display: none; /* hidden by default */
+    display: inline-flex; /* hidden by default */
     justify-content: center;
     align-items: center;
+    visibility: hidden; /* hide until we set the count */
 
     min-width: 1.5rem;
     height: 1.5rem;
