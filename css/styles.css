@@ -592,4 +592,30 @@
     gap: var(--space-sm);
     font-size: var(--text-base);
   }
+
+  /* Table */
+  .all-students_table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: var(--text-sm);
+  }
+
+  .all-students_table th {
+    text-align: left;
+    padding: var(--space-sm) var(--space-base);
+    color: hsl(var(--muted-foreground));
+    font-weight: var(--font-medium);
+    border-bottom: 1px solid hsl(var(--border));
+  }
+
+  .all-students_table td {
+    padding: var(--space-md) var(--space-base);
+    color: hsl(var(--foreground));
+    border-bottom: 1px solid hsl(var(--border));
+  }
+
+  .all-students_table tr:last-child td {
+    border-bottom: none;
+  }
+
 }
