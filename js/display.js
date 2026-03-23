@@ -1,0 +1,40 @@
+/**
+ * Feature module for displaying all students.
+ */
+
+import { students } from "./student.js";
+
+/**
+ * Displays all students in the table and updates the count badge.
+ */
+export function display_list() {
+  const tbody = document.getElementById("students-tbody");
+  const table = document.getElementById("students-table");
+  const count = document.getElementById("student-count");
+
+  // Clear previous rows
+  tbody.innerHTML = "";
+
+  // Populate rows
+  [...students]
+    // Sort students by ID in ascending order
+    .sort((a, b) => a.studentNumber.localeCompare(b.studentNumber))
+    .forEach((student) => {
+      const row = document.createElement("tr");
+      row.innerHTML = `
+        <td>${student.studentNumber}</td>
+        <td>${student.name}</td>
+        <td>${student.age}</td>
+        <td>${student.email}</td>
+        <td>${student.course}</td>
+      `;
+      tbody.appendChild(row);
+    });
+
+  // Update and show count badge
+  count.textContent = students.length;
+  count.style.visibility = "visible";
+
+  // Show the table
+  table.style.display = "table";
+}

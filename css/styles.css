@@ -475,10 +475,189 @@
   }
 
   /* Search student */
+
   #search-student {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-md);
+
+    background: hsl(var(--background));
+    border: 1px solid hsl(var(--border));
+    border-radius: var(--radius-xl);
+    padding: var(--space-lg);
+    box-shadow: 0 2px 12px hsl(0 0% 0% / 0.08);
   }
+
+  /* Row: input + button side by side */
+  .search-bar {
+    display: flex;
+    align-items: stretch;
+    gap: var(--space-sm);
+    max-width: 600px;
+  }
+
+  /* Input stretches to fill available width */
+  .search-bar input {
+    flex: 1;
+  }
+
+  /* "Search" button — inherits global button styles, only fix the white-space */
+  .search-bar button {
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+
+  /* "Student record does not exist" error banner */
+  .not-found {
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+
+    padding: var(--space-sm) var(--space-base);
+    border-radius: var(--radius-md);
+    border: 1px solid hsl(var(--destructive) / 0.3);
+    background: hsl(var(--destructive) / 0.08);
+
+    font-size: var(--text-sm);
+    color: hsl(var(--destructive));
+
+    animation: fadeSlideUp 0.2s ease;
+  }
+
+  /* Circle-exclamation icon via ::before */
+  .not-found::before {
+    content: "";
+    display: inline-block;
+    flex-shrink: 0;
+    width: 1em;
+    height: 1em;
+    background-color: hsl(var(--destructive));
+
+    mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='12' cy='12' r='10'/%3E%3Cline x1='12' y1='8' x2='12' y2='12'/%3E%3Cline x1='12' y1='16' x2='12.01' y2='16'/%3E%3C/svg%3E");
+    mask-repeat: no-repeat;
+    mask-size: contain;
+    -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='12' cy='12' r='10'/%3E%3Cline x1='12' y1='8' x2='12' y2='12'/%3E%3Cline x1='12' y1='16' x2='12.01' y2='16'/%3E%3C/svg%3E");
+    -webkit-mask-repeat: no-repeat;
+    -webkit-mask-size: contain;
+  }
+
+  /* Student result card */
+.student-card {
+  border: 1px solid hsl(var(--border));
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  font-size: var(--text-sm);
+  animation: fadeSlideUp 0.2s ease;
+}
+
+.student-card-header {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xxs);
+  padding: var(--space-md) var(--space-lg);
+  background: hsl(var(--muted));
+}
+
+.student-card-name {
+  font-size: var(--text-lg);
+  font-weight: var(--font-bold);
+  color: hsl(var(--primary));
+}
+
+.student-card-id {
+  font-size: var(--text-sm);
+  color: hsl(var(--muted-foreground));
+}
+
+.student-card-body {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+  padding: var(--space-md) var(--space-lg);
+  background: hsl(var(--background));
+}
+
+.student-card-label {
+  font-weight: var(--font-semibold);
+}
 
   /* All students */
   #all-students {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-md);
+
+    background: hsl(var(--background));
+    border: 1px solid hsl(var(--border));
+    border-radius: var(--radius-xl);
+    padding: var(--space-xl);
+    box-shadow: 0 2px 12px hsl(0 0% 0% / 0.08);
   }
+  /* Header row */
+  .all-students-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  /* Count badge */
+  .all-students-count {
+    display: inline-flex; /* hidden by default */
+    justify-content: center;
+    align-items: center;
+    visibility: hidden; /* hide until we set the count */
+
+    min-width: 1.5rem;
+    height: 1.5rem;
+    padding: 0 var(--space-xs);
+    border-radius: var(--radius-xl);
+
+    background: hsl(var(--muted));
+    color: hsl(var(--primary));
+    font-size: var(--text-sm);
+    font-weight: var(--font-semibold);
+  }
+
+  /* Full-width Display All button */
+  .all-students-btn {
+    width: 100%;
+    padding: var(--space-md) var(--space-base);
+    gap: var(--space-sm);
+    font-size: var(--text-base);
+  }
+
+  /* Table */
+  .all-students-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: var(--text-sm);
+    display: none;
+  }
+
+  .all-students-table th {
+    text-align: left;
+    padding: var(--space-sm) var(--space-base);
+    color: hsl(var(--muted-foreground));
+    font-weight: var(--font-medium);
+    border-bottom: 1px solid hsl(var(--border));
+  }
+
+  .all-students-table td {
+    padding: var(--space-md) var(--space-base);
+    color: hsl(var(--foreground));
+    border-bottom: 1px solid hsl(var(--border));
+  }
+
+  .all-students-table tr:last-child td {
+    border-bottom: none;
+  }
+
+  .all-students-table tbody tr:hover {
+    background: hsl(var(--muted));
+  }
+
+  .all-students-table tbody tr {
+    transition: background 0.15s ease;
+  }
+
 }
