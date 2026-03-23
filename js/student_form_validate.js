@@ -1,4 +1,5 @@
 // Store used student numbers to check for duplicates
+import {Student} from "./student.js"
 var usedStudentNumbers = [];
 
 export function generateStudentNumber() {
@@ -15,19 +16,30 @@ export function generateStudentNumber() {
 
 
 export function initStudentForm() {
-  // Generate student number on page load
-  document.getElementById("studentNumber").textContent = generateStudentNumber();
+  // Generate and display student number on page load
+  const studentNumber = generateStudentNumber();
+  document.getElementById("studentNumber").textContent = studentNumber;
 
-  // Attach validation to form submission
   const form = document.getElementById("registrationForm");
   form?.addEventListener("submit", (event) => {
-    event.preventDefault(); // stop default HTML submission
+    event.preventDefault();
+
     if (validateForm()) {
-      // form is valid — you can handle submission here later
-      console.log("Form submitted successfully!");
+      // Collect values from the form
+      const name = document.getElementById("name").value.trim();
+      const age = parseInt(document.getElementById("age").value.trim());
+      const email = document.getElementById("email").value.trim();
+      const course = document.querySelector('input[name="course"]:checked').value;
+
+      // Create the Student object
+      const student = new Student(studentNumber, name, age, email, course);
+
+      // Confirm in console
+      console.log("Student object created:", student);
     }
   });
 }
+
 
 export function validateForm() { 
   var isValid = true;
