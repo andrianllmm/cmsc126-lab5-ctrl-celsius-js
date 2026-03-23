@@ -3,6 +3,7 @@
  * Initializes app by attaching event listeners to DOM elements
  */
 
+import { initStudentForm } from "./student_form_validate.js";
 import { time_now } from "./time.js";
 import { find_student } from "./search.js";
 import { display_list } from "./display.js";
@@ -29,3 +30,6 @@ inputSearch?.addEventListener("keydown", (e) => {
 
 // Display all students
 btnDisplayAll?.addEventListener("click", display_list);
+
+//initialize student form 
+initStudentForm();
