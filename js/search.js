@@ -16,18 +16,21 @@ export function find_student() {
   // Clear previous result
   resultContainer.innerHTML = "";
 
+  // Do nothing if input is empty
   if (!input) return;
 
+  // Find student in the array by student number
   const student = students.find((s) => s.studentNumber === input);
 
+  // Show error message if student is not found
   if (!student) {
     resultContainer.innerHTML = `
       <p class="not-found">Student record does not exist.</p>
     `;
     return;
   }
-
-resultContainer.innerHTML = `
+  // Render student properties as a card
+  resultContainer.innerHTML = `
     <div class="student-card">
       <div class="student-card-header">
         <h3 class="student-card-name">${student.name}</h3>
