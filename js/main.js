@@ -3,6 +3,7 @@
  * Initializes app by attaching event listeners to DOM elements
  */
 
+import { initStudentForm } from "./student_form_validate.js";
 import { time_now } from "./time.js";
 
 // DOM Elements
@@ -13,3 +14,6 @@ const dateOutput = document.getElementById("current-date-output");
 btnShowDate?.addEventListener("click", () => {
   dateOutput.innerHTML = time_now();
 });
+
+//initialize student form 
+initStudentForm();
