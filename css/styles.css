@@ -555,4 +555,16 @@
     padding: var(--space-xl);
     box-shadow: 0 2px 12px hsl(0 0% 0% / 0.08);
   }
+  /* Header row: icon + heading on the left, badge on the right */
+  .all-students_header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .all-students_title {
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+  }
 }
