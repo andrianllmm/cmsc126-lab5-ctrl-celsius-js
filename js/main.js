@@ -3,11 +3,10 @@
  * Initializes app by attaching event listeners to DOM elements
  */
 
-import { initStudentForm } from "./student_form_validate.js";
 import { time_now } from "./time.js";
-import { find_student } from "./search.js";
-import { display_list } from "./display.js";
-
+import { initStudentForm } from "./add_student.js";
+import { find_student } from "./search_students.js";
+import { display_list } from "./display_students.js";
 
 // DOM Elements
 const btnShowDate = document.getElementById("show-current-date-btn");
@@ -31,5 +30,5 @@ inputSearch?.addEventListener("keydown", (e) => {
 // Display all students
 btnDisplayAll?.addEventListener("click", display_list);
 
-//initialize student form 
+// Initialize student form
 initStudentForm();
