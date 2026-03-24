@@ -6,7 +6,9 @@ import { students } from "./student.js";
 /**
  * Adds a student to the student array.
  */
-export function add_student(studentNumber, name, age, email, course) {
+export function add_student(name, age, email, course) {
+  const studentNumber = generateStudentNumber();
+
   const student = {
     studentNumber: studentNumber,
     name: name,
@@ -37,6 +39,7 @@ export function generateStudentNumber() {
   } while (usedStudentNumbers.has(studentNumber));
 
   usedStudentNumbers.add(studentNumber);
+
   return studentNumber;
 }
 
@@ -44,11 +47,6 @@ export function generateStudentNumber() {
  * Initializes the student form
  */
 export function initStudentForm() {
-  // Generate and display student number on page load
-  const studentNumber = generateStudentNumber();
-
-  document.getElementById("studentNumber").textContent = studentNumber;
-
   const form = document.getElementById("registrationForm");
 
   form?.addEventListener("submit", (event) => {
@@ -64,13 +62,12 @@ export function initStudentForm() {
       ).value;
 
       // Create the Student object and add it to student array
-      add_student(studentNumber, name, age, email, course);
+      const { studentNumber } = add_student(name, age, email, course);
 
       // Reset form and generate new student number for next entry
       form.reset();
 
-      const newStudentNumber = generateStudentNumber();
-      document.getElementById("studentNumber").textContent = newStudentNumber;
+      document.getElementById("studentNumber").textContent = studentNumber;
     }
   });
 }
