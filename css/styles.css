@@ -472,6 +472,24 @@
 
   /* Add student */
   #add-student {
+    .form-wrapper {
+      display: flex;
+      justify-content: center;
+      background: hsl(var(--background));
+      border: 1px solid hsl(var(--border));
+      border-radius: var(--radius-xl);
+      padding: var(--space-lg);
+      box-shadow: 0 2px 12px hsl(0 0% 0% / 0.08);
+      margin-top: var(--space-lg);
+    }
+
+    .errorLabel {
+      color: hsl(var(--destructive));
+    }
+
+    input[type="submit"] {
+      width: 100%;
+    }
   }
 
   /* Search student */
@@ -542,44 +560,44 @@
   }
 
   /* Student result card */
-.student-card {
-  border: 1px solid hsl(var(--border));
-  border-radius: var(--radius-lg);
-  overflow: hidden;
-  font-size: var(--text-sm);
-  animation: fadeSlideUp 0.2s ease;
-}
+  .student-card {
+    border: 1px solid hsl(var(--border));
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    font-size: var(--text-sm);
+    animation: fadeSlideUp 0.2s ease;
+  }
 
-.student-card-header {
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-xxs);
-  padding: var(--space-md) var(--space-lg);
-  background: hsl(var(--muted));
-}
+  .student-card-header {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-xxs);
+    padding: var(--space-md) var(--space-lg);
+    background: hsl(var(--muted));
+  }
 
-.student-card-name {
-  font-size: var(--text-lg);
-  font-weight: var(--font-bold);
-  color: hsl(var(--primary));
-}
+  .student-card-name {
+    font-size: var(--text-lg);
+    font-weight: var(--font-bold);
+    color: hsl(var(--primary));
+  }
 
-.student-card-id {
-  font-size: var(--text-sm);
-  color: hsl(var(--muted-foreground));
-}
+  .student-card-id {
+    font-size: var(--text-sm);
+    color: hsl(var(--muted-foreground));
+  }
 
-.student-card-body {
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-xs);
-  padding: var(--space-md) var(--space-lg);
-  background: hsl(var(--background));
-}
+  .student-card-body {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-xs);
+    padding: var(--space-md) var(--space-lg);
+    background: hsl(var(--background));
+  }
 
-.student-card-label {
-  font-weight: var(--font-semibold);
-}
+  .student-card-label {
+    font-weight: var(--font-semibold);
+  }
 
   /* All students */
   #all-students {
@@ -593,6 +611,7 @@
     padding: var(--space-xl);
     box-shadow: 0 2px 12px hsl(0 0% 0% / 0.08);
   }
+
   /* Header row */
   .all-students-header {
     display: flex;
@@ -659,5 +678,4 @@
   .all-students-table tbody tr {
     transition: background 0.15s ease;
   }
-
 }
